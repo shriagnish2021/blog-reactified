@@ -1,16 +1,748 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
+@import url("reset.css");
+/* ================================================
+-------------------Layout--------------------------
+===================================================*/
 * {
   box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: white;
+  font-family: "PT Sans", sans-serif;
+  width: 100%;
+  box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  min-height: 100vh;
+}
+
+/* ================================================
+-------------------Header--------------------------
+===================================================*/
+header {
+  background-color: white;
+  padding: 0.6rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 7px 30px -10px rgba(101, 115, 122, 0.5);
+}
+.logo {
+  font-family: "Bangers", cursive;
+  font-size: 2.5rem;
+  color: #26495c;
+  margin: auto 0;
+}
+.nav-bar a {
+  text-decoration: none;
+  display: flex;
+}
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.nav-items {
+  margin: auto 0;
+}
+.nav-items > a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: darkslategray;
+  display: inline-block;
+  padding: 1rem 1rem;
+}
+.mobile-menu {
+  display: none;
+}
+.open-menu {
+  display: none;
+}
+/* ================================================
+-------------------Search Bar----------------------
+===================================================*/
+
+.search-bar {
+  width: 60%;
+  margin: 1rem auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+input[name="search"] {
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: 2px whitesmoke solid;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+  flex-basis: 400px;
+  color: gray;
+}
+input[name="search"]:focus {
+  outline: none;
+  border: 2px rgb(230, 230, 230) solid;
+}
+
+.search-btn {
+  border-radius: 0.5rem;
+  border: none;
+  background-color: transparent;
+}
+.search-btn i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+select {
+  border-radius: 1rem;
+}
+
+.sort-btn i {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+.author-select {
+  border: none;
+  background-color: transparent;
+  color: gray;
+  font-size: 1rem;
+  flex-basis: 200px;
+  flex: 1;
+  border-radius: 0.3rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 1rem;
+  border: 2px whitesmoke solid;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+}
+.author-select:focus,
+.author-select:hover {
+  outline: none;
+}
+.author-select:active {
+  border-color: whitesmoke;
+}
+
+/* ================================================
+-------------------Posts--------------------------
+===================================================*/
+.section-container {
+  width: 100%;
+  margin: 0 auto;
+}
+.posts {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.post-card {
+  padding: 1.9rem;
+  flex-basis: 200px;
+  border-radius: 0.5rem;
+  background-color: white;
+  margin: 1.5rem;
+  border: 2px white solid;
+  box-shadow: 0px 0px 10px rgba(149, 151, 160, 0.05),
+    0 0px 40px rgba(166, 173, 201, 0.2);
+}
+.post-card:hover {
+  border: 2px whitesmoke solid;
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+}
+.post-card h1 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  text-transform: capitalize;
+}
+.post-card h2 {
+  color: #26495c;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+.post-card em {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+.post-card a {
+  display: block;
+  text-decoration: none;
+  color: gray;
+  font-size: 0.9rem;
+}
+.post-card > a > h1 {
+  color: black;
+  font-size: 1.8rem;
+  line-height: 2rem;
+}
+.post-card div {
+  display: flex;
+}
+i {
+  color: gray;
+  font-size: 2rem;
+}
+.wrap-icon {
+  display: flex;
+  align-items: center;
+}
+.wrap-icon img[alt="profile pic"] {
+  border-radius: 2rem;
+}
+.wrap-author-date {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.wrap-author-date h2,
+em {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+}
+.wrap-author-date em {
+  color: gray;
+  font-style: normal;
+  font-size: 0.8rem;
+}
+.wrap-author-date div {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+.wrap-read-more {
+  margin-top: 1rem;
+  display: flex;
+  align-items: flex-end;
+  line-height: 1.5rem;
+}
+.change-author-select {
+  border: none;
+  background-color: transparent;
+  color: rgb(95, 95, 95);
+  font-size: 1rem;
+  /* border: 1px gray solid; */
+}
+.change-author-select:focus,
+.change-author-select:hover {
+  outline: none;
+}
+.change-author-select:active {
+  border-color: whitesmoke;
+}
+
+/* ================================================
+-------------------Show Post----------------------
+===================================================*/
+
+.show-post {
+  border-radius: 1rem;
+}
+.post-content-html * {
+  all: revert;
+  font-family: "PT Sans", sans-serif;
+  line-height: 1.5rem;
+}
+img[alt="cover"] {
+  width: 100%;
+  height: 70vh;
+}
+.post-content-html > h1,
+.post-content-html > h2,
+.post-content-html > h3,
+.post-content-html > h4,
+.post-content-html > h5,
+.post-content-html > h6 {
+  color: #26495c;
+  font-weight: normal;
+}
+.post-content-html p {
+  line-height: 1.7rem;
+}
+.show-post-content {
+  width: 55%;
+  margin: 3rem auto;
+}
+.show-post-content h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0;
+}
+.show-post-content em {
+  color: rgb(73, 73, 73);
+}
+.wrap-author-image-name {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+.wrap-author-image-name img {
+  border-radius: 2rem;
+}
+.wrap-author-image-name a {
+  text-decoration: none;
+  color: #26495c;
+}
+/* ================================================
+-------------------Login----------------------
+===================================================*/
+.login-register {
+  width: 400px;
+  margin: 0 auto;
+  justify-content: center;
+}
+.login-register h1 {
+  text-align: center;
+  font-size: 3rem;
+  text-transform: capitalize;
+  padding: 1rem 0;
+  color: #26495c;
+}
+.login-register input {
+  width: 100%;
+  outline: none;
+  border: solid #e5e5dc 2px;
+  border-radius: 0.3rem;
+  padding: 0.7rem;
+  margin: 0.3rem 0;
+  font-size: 1.2rem;
+  color: #26495c;
+}
+.login-register div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
+}
+::placeholder {
+  font-size: 1rem;
+}
+.login-register a {
+  display: block;
+  color: #26495c;
+}
+.login-register div:last-child {
+  flex-direction: row;
+  justify-content: space-between;
+}
+.button-flex button {
+  background-color: #26495c;
+  color: white;
+  padding: 0.7rem;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.button-flex {
+  display: flex;
+  gap: 30px;
+}
+.login-register ul {
+  margin: 1rem 0;
+}
+/* ================================================
+-----------------------My posts-----------------------
+===================================================*/
+.my-posts {
+  width: 60%;
+  margin: 0 auto;
+}
+.my-posts > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my-posts > div > div > h1 {
+  text-align: left;
+  font-size: 2rem;
+  text-transform: capitalize;
+  color: #26495c;
+  display: inline-block;
+}
+.my-post-card {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 1rem;
+  gap: 5px;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 0.3rem;
+}
+.my-post-card:hover {
+  box-shadow: 0 0 20px rgba(58, 60, 68, 0.05);
+}
+.my-post-card .title {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: #26495c;
+}
+.my-post-card p {
+  margin: 0.7rem 0;
+  color: gray;
+}
+.edit-delete {
+  display: flex;
+  align-items: center;
+  margin: auto 0;
+}
+.edit-delete .btn {
+  text-decoration: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: rgb(99, 99, 99);
+  border-radius: 0.2rem;
+  cursor: pointer;
+}
+.edit-delete button {
+  margin-right: 1rem;
+  border: 1px rgb(224, 222, 222) solid;
+}
+.edit-delete button:hover {
+  border: rgb(238, 174, 174) 1px solid;
+}
+.edit-delete a {
+  border: 1px #5b879e solid;
+}
+.edit-delete a:hover {
+  background-color: #5b879e;
+  color: white;
+}
+.my-posts .author-select {
+  box-shadow: 0 5px 10px rgba(93, 96, 110, 0.05);
+}
+/* ================================================
+-----------------------Create and edit post--------
+===================================================*/
+.create-edit {
+  width: 60%;
+  margin: 0 auto;
+  max-height: 100%;
+}
+.form-fields > div {
+  border: 1px whitesmoke solid;
+  box-shadow: 0 5px 10px rgba(105, 109, 126, 0.05),
+    0 15px 40px rgba(104, 108, 126, 0.2);
+  padding: 0 3rem;
+  margin-bottom: 1rem;
+}
+.create-edit > h1 {
+  text-align: left;
+  font-size: 2rem;
+  text-transform: capitalize;
+  padding: 1rem;
+  color: #26495c;
+}
+.cover > label {
+  cursor: pointer;
+  border: 1px #5b879e solid;
+  padding: 0.8rem;
+  display: inline-block;
+  margin: 2rem 0 1rem 0;
+  border-radius: 0.2rem;
+}
+.cover > label:hover {
+  background-color: whitesmoke;
+}
+.form-fields {
+  margin: 0 auto;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.form-group label {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+.form-group input,
+textarea {
+  width: 100%;
+  outline: none;
+  border: none;
+  color: rgb(49, 49, 49);
+  margin: 1rem 0;
+}
+.form-group input,
+.form-group input::placeholder {
+  font-size: 2.5rem;
+}
+.form-group textarea,
+.form-group textarea::placeholder {
+  font-size: 1.2rem;
+}
+.form-fields .btn {
+  text-decoration: none;
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 0.3rem;
+}
+.form-fields button {
+  background-color: #26495c;
+  outline: none;
+  color: white;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+}
+.form-fields a {
+  margin-right: 0.5rem;
+  background-color: rgb(231, 231, 231);
+  color: rgb(36, 34, 34);
+  border: white 1px solid;
+}
+.form-fields a:hover {
+  border: rgb(221, 221, 221) 1px solid;
+}
+/* ================================================
+-----------------------Pagination------------------
+===================================================*/
+.pagination {
+  margin: 0 auto;
+}
+[data-pagination] {
+  text-align: center;
+  font-family: "PT Sans", sans-serif;
+  width: 100%;
+}
+[data-pagination] ul {
+  list-style-type: none;
+  display: flex;
+  font-size: 1.2rem;
+  margin: auto 0;
+  padding: 0.5em;
+  justify-content: center;
+  align-items: center;
+}
+[data-pagination] ul li {
+  margin: auto 0.3rem;
+}
+
+[data-pagination] button {
+  color: #777;
+  font-size: 1.2rem;
+  padding: 0.5em;
+  background: none;
+  border: 0;
+}
+[data-pagination] button:focus,
+[data-pagination] button:hover,
+[data-pagination] i:hover {
+  color: #c4a35a;
+}
+[data-pagination] ul li i {
+  font-size: 1.2rem;
+}
+[data-pagination] .page-enabled {
+  color: #c4a35a;
+}
+/* ================================================
+---------------------Flash messages------------------
+===================================================*/
+.flash-messages {
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #26495c;
+  margin: 1rem;
+}
+.login-register ul {
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+  color: rgb(223, 108, 108);
+}
+.my-posts .flash-messages {
+  margin: 2rem 0;
+}
+/* ================================================
+---------------------Footer------------------
+===================================================*/
+footer {
+  text-align: center;
+  font-size: 1rem;
+  color: rgb(202, 202, 202);
+  margin-top: auto;
+  padding: 1.5rem;
+  background-color: #26495c;
+}
+footer i {
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  color: rgb(202, 202, 202);
+}
+/* ================================================
+---------------------Users------------------
+===================================================*/
+
+.users-table {
+  border-collapse: collapse;
+  /* background-color: #dddddd; */
+  width: 100%;
+  /* background-color: #26495c; */
+  color: black;
+}
+.users-table td,
+th {
+  border: 2px solid #408ec6;
+  text-align: left;
+  padding: 8px;
+  text-transform: capitalize;
+}
+.users-table th {
+  font-size: 1.5rem;
+  color: #26495c;
+}
+.users-table a {
+  text-decoration: none;
+  color: rgb(247, 85, 85);
+  /* border: 1px solid rgb(250, 141, 141); */
+  padding: 0.5rem;
+  /* margin-left: 1rem; */
+}
+.role-change {
+  display: flex;
+  align-items: baseline;
+}
+
+/* ================================================
+---------------------Responsivity------------------
+===================================================*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 640px) {
+  html {
+    font-size: 13px;
+  }
+  .login-register {
+    width: 60vw;
+  }
+  .nav-items > a {
+    padding: 1rem 0.5rem;
+  }
+  .create-edit {
+    width: 85%;
+  }
+  .my-posts {
+    width: 80%;
+  }
+  .nav-items {
+    display: none;
+  }
+  img[alt="cover"] {
+    width: 100%;
+    height: 30vh;
+  }
+  .show-post-content {
+    width: 85%;
+  }
+  .open-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .open-menu i {
+    color: #33647e;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+  }
+  .mobile-menu a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: darkslategray;
+    display: inline-block;
+    padding: 0.5rem;
+  }
+  .nav-bar {
+    flex-wrap: wrap;
+  }
+  .nav-bar a {
+    flex-basis: 50%;
+  }
+  .open-menu {
+    flex-basis: 40%;
+  }
+  .search-form {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  .search-btn {
+    border: 1px solid rgb(172, 172, 172);
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.3rem;
+    box-shadow: 0 5px 10px rgba(93, 96, 110, 0.05);
+  }
+
+  .search-btn svg {
+    font-size: 1rem;
+  }
+  .search-btn::before {
+    content: "Search";
+    color: gray;
+    font-size: 1rem;
+    padding-right: 0.7rem;
+    text-align: center;
+  }
+  .search-bar {
+    width: 90%;
+    padding: 1rem;
+  }
+  .author-select {
+    flex-basis: 40%;
+    box-shadow: 0 5px 10px rgba(93, 96, 110, 0.05);
+  }
+  .search-form input[name="search"] {
+    flex-basis: 100%;
+    box-shadow: 0 5px 10px rgba(93, 96, 110, 0.05);
+  }
+  header {
+    margin-bottom: 1rem;
+  }
+}
+@media only screen and (min-device-width: 320px) and (max-device-width: 360px) {
+  .post-card img {
+    width: 70vw;
+    height: 180px;
+  }
+}
+@media only screen and (min-device-width: 641px) and (max-device-width: 1007px) {
+  html {
+    font-size: 15px;
+  }
+  .create-edit {
+    width: 85%;
+  }
+  .my-posts {
+    width: 80%;
+  }
+  .search-bar {
+    width: 85%;
+  }
 }
