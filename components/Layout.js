@@ -5,21 +5,21 @@ import Header from './Header';
 import Footer from './Footer';
 
 const Layout = ({ children }) => (
-    <>
-        <Head>
-            <title>Blogged</title>
-            <link rel="icon" href="/fav.png" />
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-            <link
-                href="https://fonts.googleapis.com/css2?family=Bangers&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-                rel="stylesheet"
-            />
-        </Head>
-        <Header />
-        <div className="container">{children}</div>
-        <Footer />
-    </>
+  <>
+    <Head>
+      <title>Blogged</title>
+      <link rel="icon" href="/fav.png" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Bangers&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet"
+      />
+    </Head>
+    <Header />
+    <div className="container">{children}</div>
+    <Footer />
+  </>
 );
 
 export default Layout;

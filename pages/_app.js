@@ -11,21 +11,21 @@ const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 toast.configure();
 function MyApp({ Component, pageProps }) {
-    const cookies = new Cookies();
-    const [isLogged, setIsLogged] = useState(!!cookies.get('jwt'));
-    const logginSettings = {
-        isLogged,
-        setIsLogged,
-    };
-    return (
-        <AuthenticationContext.Provider value={logginSettings}>
-            <SWRConfig value={{ fetcher }}>
-                <Layout>
-                    <Component {...pageProps} />
-                </Layout>
-            </SWRConfig>
-        </AuthenticationContext.Provider>
-    );
+  const cookies = new Cookies();
+  const [isLogged, setIsLogged] = useState(!!cookies.get('jwt'));
+  const logginSettings = {
+    isLogged,
+    setIsLogged,
+  };
+  return (
+    <AuthenticationContext.Provider value={logginSettings}>
+      <SWRConfig value={{ fetcher }}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </SWRConfig>
+    </AuthenticationContext.Provider>
+  );
 }
 
 export default MyApp;
