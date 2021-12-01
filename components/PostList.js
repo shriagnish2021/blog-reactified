@@ -40,7 +40,7 @@ const PostList = ({ posts }) => {
         pageLinkClassName="py-1 px-2 m-1 cursor-pointer font-bold text-xl focus:text-white hover:bg-blue-600 hover:text-white rounded"
         nextLinkClassName="py-1 px-2 m-1 cursor-pointer font-bold text-xl hover:text-yellow-600"
         previousLinkClassName="py-1 px-2 m-1 cursor-pointer font-bold text-xl hover:text-yellow-600"
-        activeLinkClassName="bg-blue-600 rounded text-white"
+        activeLinkClassName="bg-primary rounded text-white"
       />
     </section>
   );
