@@ -4,6 +4,7 @@ import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
 
+// eslint-disable-next-line react/prop-types
 const Layout = ({ children }) => (
   <>
     <Head>
