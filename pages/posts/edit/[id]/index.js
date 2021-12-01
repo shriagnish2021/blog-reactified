@@ -1,11 +1,9 @@
-import EditPost from "../../../../components/EditPost"
+import EditPost from '../../../../components/EditPost';
 
-const Post = () => {
-    return (
-        <div className="create-edit">
-            <EditPost />
-        </div>
-    )
-}
+const Post = () => (
+  <div className="create-edit">
+    <EditPost />
+  </div>
+);
 
-export default Post
+export default Post;

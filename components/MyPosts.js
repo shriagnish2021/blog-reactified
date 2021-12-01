@@ -15,6 +15,7 @@ const fetcher = async (url) => {
 };
 const MyPostsList = () => {
   const url = 'https://blogged-for-you.herokuapp.com/api/posts/';
+  // eslint-disable-next-line no-unused-vars
   const { data, error } = useSWR(url, fetcher);
 
   const submitHandler = async (e, id) => {

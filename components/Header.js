@@ -25,6 +25,7 @@ const Header = () => {
         <>
           <Link href="/createPost">Create Post</Link>
           <Link href="/myPosts">My Posts</Link>
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a href="#" onClick={clickHandler}>
             Logout
           </a>

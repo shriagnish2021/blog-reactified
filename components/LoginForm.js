@@ -8,7 +8,7 @@ import 'font-awesome/css/font-awesome.min.css';
 
 const LoginForm = () => {
   const cookies = new Cookies();
-  const { isLogged, setIsLogged } = useContext(AuthenticationContext);
+  const { setIsLogged } = useContext(AuthenticationContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);

@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import 'font-awesome/css/font-awesome.min.css';
 import useSWR from 'swr';
 import FullPageLoader from './FullPageLoader';
 
+// eslint-disable-next-line react/prop-types
 const SearchBar = ({ onFilter, filterConstraints }) => {
   const url = 'https://blogged-for-you.herokuapp.com/api/authors';
   const { data } = useSWR(url);

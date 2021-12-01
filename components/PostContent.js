@@ -13,6 +13,7 @@ const PostContent = () => {
   if (!post) return <FullPageLoader />;
   return (
     <>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={`https://blogged-for-you.herokuapp.com/uploads/${post.imageFileName}`} alt="cover" />
       <div className="show-post-content">
         <h1>{post.title}</h1>

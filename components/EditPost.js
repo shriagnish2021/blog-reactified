@@ -65,6 +65,7 @@ const EditPost = () => {
           <div className="form-fields">
             <div>
               <div className="cover">
+                {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
                 <label htmlFor="cover">Add a cover image</label>
                 <input type="file" accept="image/*" id="cover" name="cover" hidden onChange={handleFile} />
                 <span className="image-name">&nbsp;{imageFile.name || post.imageFileName}</span>
@@ -92,6 +93,7 @@ const EditPost = () => {
                 />
               </div>
             </div>
+            {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
             <a className="btn" href="/">
               Cancel
             </a>

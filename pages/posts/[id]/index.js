@@ -1,10 +1,9 @@
-import PostContent from "../../../components/PostContent"
-const Post = () => {
-    return (
-        <div className="show-post">
-            <PostContent />
-        </div>
-    )
-}
+import PostContent from '../../../components/PostContent';
 
-export default Post
+const Post = () => (
+  <div className="show-post">
+    <PostContent />
+  </div>
+);
+
+export default Post;

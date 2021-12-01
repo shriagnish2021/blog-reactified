@@ -2,7 +2,9 @@ import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import PostItem from './PostItem';
 
+// eslint-disable-next-line react/prop-types
 const PostList = ({ posts }) => {
+  // eslint-disable-next-line no-unused-vars
   const [articleData, setArticleData] = useState(posts);
   const [pageNumber, setPageNumber] = useState(0);
   const articlesPerPage = 5;

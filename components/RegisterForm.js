@@ -31,7 +31,7 @@ const RegisterForm = () => {
     const response = await res.json();
     if (res.status === 200) {
       setLoading(false);
-      toast.success('You have been registered successfully. Please login.', {
+      toast.info('You have been registered successfully. Please login.', {
         position: toast.POSITION.TOP_CENTER,
       });
       router.push('/login');
